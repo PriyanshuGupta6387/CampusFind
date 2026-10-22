@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusFind</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body style="background-color: #F0F5FF;">
+
+    <h1>CampusFind 🎒</h1>
+    <p>Lost something on campus? Let's help you find it.</p>
+    <hr>
+
+    <h2>Report an Item</h2>
+
+    <form id="itemForm">
+
+        <label for="itemName">Item Name:</label>
+        <br><br>
+        <input
+            type="text"
+            name="itemName"
+            id="itemName"
+            placeholder="e.g. Black Wallet"
+            style="border-radius: 8px; padding: 14px 40px;"
+            required
+        >
+
+        <br><br>
+
+        <label for="itemCategory">Item Category:</label>
+        <br><br>
+
+        <select
+            name="itemCategory"
+            id="itemCategory"
+            style="border-radius: 8px; padding: 14px 64px;"
+            required
+        >
+            <option value="" selected disabled>Select Category</option>
+            <option value="Wallet">Wallet</option>
+            <option value="Identity Card">Identity Card</option>
+            <option value="Library Card">Library Card</option>
+            <option value="Books">Books</option>
+            <option value="Documents">Documents</option>
+            <option value="Mobile Phone">Mobile Phone</option>
+            <option value="Earphone">Earphone</option>
+            <option value="Keys">Keys</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <br><br>
+
+        <label for="location">Location:</label>
+        <br><br>
+
+        <input
+            type="text"
+            name="location"
+            id="location"
+            placeholder="Where was it lost/found?"
+            style="border-radius: 8px; padding: 8px 40px;"
+            required
+        >
+        <br><br>
+         <label for="itemPhoto">Upload the photo:</label>
+          <br><br>
+
+         <input
+         type="file"
+          name="file"
+          id="itemPhoto"
+          accept="image/*"
+        >
+          <br><br>
+
+        <br><br>
+
+        <div class="report-buttons">
+            <button type="button" class="lost-btn" id="lostBtn">
+                Report Lost
+            </button>
+
+            <button type="button" class="found-btn" id="foundBtn">
+                Report Found
+            </button>
+        </div>
+
+        <p id="selectedStatus">Please select Lost or Found.</p>
+
+        <button type="submit" class="submit-btn">
+            Submit Item
+            
+        </button>
+
+        
+
+    </form>
+
+    <p id="message" role="status"></p>
+
+    <section id="result" hidden>
+    <h2>Submitted Item</h2>
+
+    <p><strong>Item:</strong> <span id="resultName"></span></p>
+    <p><strong>Category:</strong> <span id="resultCategory"></span></p>
+    <p><strong>Location:</strong> <span id="resultLocation"></span></p>
+    <p><strong>Status:</strong> <span id="resultStatus"></span></p>
+
+    <p><strong>Photo:</strong></p>
+    <img
+        id="resultPhoto"
+        alt="Uploaded item photo"
+        width="200"
+        hidden
+    >
+    </section>
+
+  
+<section id="recentItems">
+  <h2>Recent Items</h2>
+
+  <input
+    type="text"
+    id="searchInput"
+    placeholder="Search item name..."
+  >
+
+  <select id="statusFilter">
+    <option value="All">All Items</option>
+    <option value="Lost">Lost Items</option>
+    <option value="Found">Found Items</option>
+  </select>
+
+  <div id="itemsList"></div>
+</section>
+
+
+    <script src="script.js"></script>
+</body>
+
+<header class="navbar">
+  <a href="#" class="logo">Campus<span>Find</span></a>
+  <p>Lost it? Find it.</p>
+</header>
+
+</html>
